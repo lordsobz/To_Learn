@@ -1,0 +1,52 @@
+POST http://localhost:4000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "test2",
+    "password": "1234"
+}
+
+###
+
+POST http://localhost:4000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "test2",
+    "password": "1234"
+}
+
+###
+POST http://localhost:4000/api/posts
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGIzMTJhZjJhMzkyMTY0YTQwZWYzNTkiLCJpYXQiOjE2MjIzNjA3NjB9.tSyew-wdFU7ejexA4tiNzVKIclQ9Gy-V2nWwH0-SATs
+
+{
+    "title": "Ref",
+    "description":"Ref",
+    "url": "Ref.com",
+    "status": "Learning"
+}
+
+###
+
+GET http://localhost:4000/api/posts
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGIzMTJhZjJhMzkyMTY0YTQwZWYzNTkiLCJpYXQiOjE2MjIzNjA3NjB9.tSyew-wdFU7ejexA4tiNzVKIclQ9Gy-V2nWwH0-SATs
+
+
+### 
+PUT http://localhost:4000/api/posts/60b50c783b6ee8784c28c813
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGIzMTJhZjJhMzkyMTY0YTQwZWYzNTkiLCJpYXQiOjE2MjIzNjA3NjB9.tSyew-wdFU7ejexA4tiNzVKIclQ9Gy-V2nWwH0-SATs
+
+{
+    "title": "ExpressJS",
+    "description":"ExpressJS",
+    "url": "expressJS.com",
+    "status": "Finished"
+}
+
+
+### 
+DELETE http://localhost:4000/api/posts/60b371bf56f8ee10d0b71087
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGIzMTJhZjJhMzkyMTY0YTQwZWYzNTkiLCJpYXQiOjE2MjIzNjA3NjB9.tSyew-wdFU7ejexA4tiNzVKIclQ9Gy-V2nWwH0-SATs
