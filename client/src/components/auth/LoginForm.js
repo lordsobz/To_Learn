@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import {Link, useHistory} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {useState, useContext} from 'react'
 import {AuthContext} from '../../contexts/AuthContext'
 import AlertMessage from '../layout/AlertMessage'
@@ -26,7 +26,7 @@ const LoginForm = () =>{
 
         try {
             const loginData = await loginUser(loginForm)
-            if(loginData.success) {
+            if(!loginData.success) {
                 setAlert({type: 'danger', message: loginData.message})
                 setTimeout(() => setAlert(null), 4000) // Xoa form Alert sau 3s
             }

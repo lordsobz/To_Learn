@@ -24,7 +24,7 @@ router.post('/', verifyToken, async (req, res) =>{
         const newPost = new Post({
             title,
             description: description || '',
-            url: url.startsWith('http://') ? url:'http://'+(url) || '',
+            url: url.startsWith('https://') ? url:'https://'+(url) || '',
             status: status || 'Wishlist',
             user: req.userId
         })

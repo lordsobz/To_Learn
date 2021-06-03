@@ -61,6 +61,12 @@ const AuthContextProvider = ({children}) =>{
         }
     }
 
+    //Logout
+    const logoutUser = () => {
+        localStorage.removeItem(LOCAL_STORAGE_TOKEN_NAME)
+        dispatch({type: 'SET_AUTH', payload: {isAuthenticated: false, user: null}})
+    }
+
     //Register
     const registerUser = async userForm =>{
         try {
@@ -85,7 +91,7 @@ const AuthContextProvider = ({children}) =>{
         }
 
     //Context data
-    const AuthContextData = {loginUser, registerUser, authState }
+    const AuthContextData = {loginUser, registerUser, logoutUser, authState }
 
     // Tra ve provider
     return (
